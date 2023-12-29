@@ -1,0 +1,11 @@
+body{
+    background-color: #393962;
+}
+
+h1{
+    filter: drop-shadow(0 0 4px rgba(0, 183, 255, 0.727));
+}
+
+.rounded-4{
+    border: solid 2px rgb(106, 207, 247);
+}
