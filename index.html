@@ -1,75 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> </title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title> </title>
+    <!-- !=========================  bootstrap  ========================== -->
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <!-- !=========================  Style  ========================== -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
 
-  <!-- !=========================  bootstrap  ========================== -->
-  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
-  <!-- !=========================  Style  ========================== -->
-  <link rel="stylesheet" href="./assets/css/style.css" />
-</head>
-
-<body>
-  <section class="loginMassage" id="loginMassage">
-    <div class="row d-flex justify-content-center align-items-center">
-      <div id="regDialog" class="data rounded-4 p-5 col-md-6 m-auto my-5 shadow-lg text-center">
-        <h1 class="text-info m-3">Smart Login System</h1>
-        <input type="text" placeholder="Enter your Name" id="userName" class="form-control mb-3" />
-        <input placeholder="Enter your Email" type="email" id="userEmail" class="form-control mb-3" />
-        <div id="validationAlarm" class="d-none">
-          <h3 class="form-control bg-warning fw-bolder text-white">Type a valid email ex: test@gmail.com</h3>
-        </div>
-        <input type="password" id="password" placeholder="Enter your Password" class="form-control mb-3" />
-        <h6 id="regAlarm" class="text-warning m-3"></h6>
-        <button id="register" class="btn btn-outline-info w-100">
-          Register
-        </button>
-        <p class="text-white m-3">
-          You have an account?
-          <a id="regLink" class="text-info m-3" href="#">Login here</a>
-        </p>
-      </div>
+  <body>
+    <section class="loginMassage" id="loginMassage">
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-6 m-auto">
+          <div
+            id="regDialog"
+            class="data rounded-4 p-5 m-3 shadow-lg text-center"
+          >
+            <h1 class="text-info m-3">Smart Login System</h1>
+            <input
+              type="text"
+              placeholder="Enter your Name"
+              id="userName"
+              class="form-control mb-3"
+            />
+            <input
+              placeholder="Enter your Email"
+              type="email"
+              id="userEmail"
+              class="form-control mb-3"
+            />
+            <div id="validationAlarm" class="d-none">
+              <h3 class="form-control bg-warning fw-bolder text-white">
+                Type a valid email ex: test@gmail.com
+              </h3>
+            </div>
+            <input
+              type="password"
+              id="password"
+              placeholder="Enter your Password"
+              class="form-control mb-3"
+            />
+            <h6 id="regAlarm" class="text-warning m-3"></h6>
+            <button id="register" class="btn btn-outline-info w-100">
+              Register
+            </button>
+            <p class="text-white m-3">
+              You have an account?
+              <a id="regLink" class="text-info m-3" href="#">Login here</a>
+            </p>
+          </div>
           <!--^ ============== login =============== -->
-    <div id="loginDialog" class="data p-5 rounded-4 col-md-6 m-auto my-5 d-none shadow-lg text-center">
-      <h1 class="text-info m-3">Smart Login System</h1>
-      <input placeholder="Enter your Email" type="email" id="loginUserEmail" class="form-control mb-3" />
-      <input type="password" id="loginPassword" placeholder="Enter your Password" class="form-control mb-3" />
-      <h6 id="loginAlarm" class="text-warning m-3"></h6>
-      <button id="login" class="btn btn-outline-info w-100">login</button>
-      <p class="text-white m-3">
-        Don’t have an account?
-        <a id="loginLink" class="text-info m-3" href="#">Register here</a>
-      </p>
-    </div>
-    </div>
-
-
-  </section>
-  <!--! ==================== welcome Home =================== -->
-
-  <section id="welcomeHome" class="welcomeHome d-none">
-    <!-- nav -->
-    <nav class="navbar bg-dark">
-      <div class="container">
-        <a class="navbar-brand text-info">Navbar</a>
-        <button id="Logout" class="ms-auto btn btn-outline-info" type="submit">
-          Logout
-        </button>
+          <div
+            id="loginDialog"
+            class="data p-5 rounded-4 m-3 d-none shadow-lg text-center"
+          >
+            <h1 class="text-info m-3">Smart Login System</h1>
+            <input
+              placeholder="Enter your Email"
+              type="email"
+              id="loginUserEmail"
+              class="form-control mb-3"
+            />
+            <input
+              type="password"
+              id="loginPassword"
+              placeholder="Enter your Password"
+              class="form-control mb-3"
+            />
+            <h6 id="loginAlarm" class="text-warning m-3"></h6>
+            <button id="login" class="btn btn-outline-info w-100">login</button>
+            <p class="text-white m-3">
+              Don’t have an account?
+              <a id="loginLink" class="text-info m-3" href="#">Register here</a>
+            </p>
+          </div>
+        </div>
       </div>
-    </nav>
-    <div class="row d-flex justify-content-center align-items-center">
-      <div id="regDialog" class="welcomediv rounded-4 p-5 col-md-6 m-auto my-5 shadow-lg text-center">
-        <h2 id="welcomeMassage" class="text-white py-5">Welcome</h2>
+    </section>
+    <!--! ==================== welcome Home =================== -->
+
+    <section id="welcomeHome" class="welcomeHome d-none">
+      <!-- nav -->
+      <nav class="navbar bg-dark">
+        <div class="container">
+          <a class="navbar-brand text-info">Navbar</a>
+          <button
+            id="Logout"
+            class="ms-auto btn btn-outline-info"
+            type="submit"
+          >
+            Logout
+          </button>
+        </div>
+      </nav>
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-md-6 m-auto ">
+          <div
+            id="regDialog"
+            class="welcomediv rounded-4 p-5 m-3 shadow-lg text-center"
+          >
+            <h2 id="welcomeMassage" class="text-white py-5">Welcome</h2>
+          </div>
+        </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ^========================  JS  ======================== -->
-  <script src="./assets/js/bootstrap.bundle.min.js"></script>
-  <script src="./assets/js/script.js"></script>
-</body>
-
+    <!-- ^========================  JS  ======================== -->
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
 </html>
