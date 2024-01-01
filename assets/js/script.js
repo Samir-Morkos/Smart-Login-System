@@ -35,6 +35,24 @@ if (localStorage.getItem('userslist') == null) {
     users = JSON.parse(localStorage.getItem('userslist'))
 }
 
+// loginUsers = []
+
+// if (localStorage.getItem('login') == null) {
+//     loginUsers = []
+// } else {
+//     loginUsers = JSON.parse(localStorage.getItem('login'))
+// }
+
+loginUsers = []
+
+if (localStorage.getItem('login') == null) {
+    loginUsers = []
+
+} else {
+    loginUsers = JSON.parse(localStorage.getItem('login'))
+    openHome()
+}
+
 // =================== events
 
 registerBtn.addEventListener('click', addUser)
@@ -104,12 +122,16 @@ function displaydialog() {
 function openHome() {
     loginMassage.classList.add('d-none')
     welcomeHome.classList.remove('d-none')
-
+    for (var i = 0; i < users.length; i++) {
+        welcomeMassage.innerHTML = `Welcome  ${users[i].uName}`
+    }
 }
 //^ =============== logout
 function logout() {
     loginMassage.classList.remove('d-none')
     welcomeHome.classList.add('d-none')
+    loginUsers.pop()
+    localStorage.removeItem('login')
 }
 
 // ^=============== validation Alarm
@@ -119,18 +141,25 @@ function valAlarm() {
 
 // !====================== login
 
+
 function login() {
     if (isLoginEmpty() == true) {
         loginAlarm.innerHTML = `All inputs is required`
     } else {
+        var loginUser = {
+            logEmail: loginUserEmail.value,
+            logPassword: loginPassword.value
+        }
 
-        var logEmail = loginUserEmail.value
-        var logPassword = loginPassword.value
+        // var logEmail = loginUserEmail.value
+        // var logPassword = loginPassword.value
 
         for (var i = 0; i < users.length; i++) {
-            if (users[i].uEmail.toLowerCase() == logEmail.toLowerCase() && users[i].uPassword == logPassword) {
+            if (users[i].uEmail.toLowerCase() == loginUser.logEmail.toLowerCase() && users[i].uPassword == loginUser.logPassword) {
+                loginUsers.splice(0, 1, loginUser)
+                localStorage.setItem('login', JSON.stringify(loginUsers))
                 openHome()
-                welcomeMassage.innerHTML = `Welcome  ${users[i].uName}`
+
             } else {
                 loginAlarm.innerHTML = `inputs is incorrect`
             }
